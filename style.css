@@ -1,0 +1,222 @@
+/* Generell styling */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #3a5a40; /* Mørk grønn */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #588157; /* Litt lysere grønn */
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav button {
+    background-color: #a3b18a; /* Lys grønn/brun */
+    color: #333;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #dad7cd; /* Enda lysere */
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section {
+    display: none; /* Skjul alle seksjoner som standard */
+    padding: 15px;
+    border-bottom: 1px solid #eee; /* Skillelinje */
+}
+
+section.active {
+    display: block; /* Vis den aktive seksjonen */
+}
+
+h2 {
+    color: #3a5a40; /* Mørk grønn */
+    margin-bottom: 15px;
+}
+
+/* Brøk-styling */
+.fraction-display, .fraction-inline {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 10px 5px;
+}
+
+.fraction-display .numerator, .fraction-inline .numerator {
+    display: block;
+    padding: 0 5px;
+    border-bottom: 2px solid #333;
+}
+
+.fraction-display .denominator, .fraction-inline .denominator {
+    display: block;
+    padding: 0 5px;
+}
+
+.fraction-display.large {
+    font-size: 2.5em; /* Større brøk for oppgave */
+    margin: 20px auto;
+    display: block; /* Sentrert */
+}
+.fraction-display.large .numerator,
+.fraction-display.large .denominator {
+     padding: 5px 15px;
+}
+
+/* Eksempel og Øving */
+#problem-area, #answer-area, #feedback-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#answer-area label {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+#answer-area input[type="number"] {
+    padding: 8px;
+    margin: 5px;
+    width: 60px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #588157; /* Grønn */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #3a5a40; /* Mørkere grønn */
+}
+
+#new-task-btn {
+     background-color: #a3b18a; /* Lysere */
+     color: #333;
+}
+#new-task-btn:hover {
+    background-color: #dad7cd;
+}
+
+#hint-btn {
+    background-color: #e07a5f; /* Oransje/brun for hint */
+}
+#hint-btn:hover {
+     background-color: #d45d3d;
+}
+
+/* Tilbakemelding */
+#feedback {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 1.5em; /* Sørger for plass selv om den er tom */
+}
+
+#feedback.success {
+    color: #2a9d8f; /* Grønnaktig */
+    background-color: #e9f5f3;
+    border: 1px solid #a5d8d1;
+}
+
+#feedback.error {
+    color: #e76f51; /* Oransje/rød */
+    background-color: #fdecea;
+    border: 1px solid #f9cdc1;
+}
+
+#feedback.info {
+    color: #264653; /* Mørk blågrønn */
+    background-color: #e4f0f3;
+    border: 1px solid #b8d6de;
+}
+
+/* Visuell Pizza Eksempel (Forenklet) */
+.visual-example {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.fraction-visual {
+    text-align: center;
+}
+.pizza {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden; /* Klipper slices */
+    background-color: #f9e79f; /* Oste-farge */
+}
+.pizza-half {
+     background-image: linear-gradient(to right, #f9e79f 50%, #f9e79f 50%); /* Grunnfarge */
+     border: none;
+}
+
+/* Veldig forenklet pizza - bedre implementering krever mer CSS/SVG */
+.slice {
+     position: absolute;
+     width: 50%;
+     height: 50%;
+     background-color: transparent; /* Usynlig som standard */
+     transform-origin: bottom right;
+}
+.slice.marked {
+     background-color: #e74c3c; /* Rød for markert */
+     opacity: 0.7;
+}
+/* Plassering for 4 deler (veldig grovt) */
+.slice-1-4 { top: 0; left: 50%; transform: rotate(0deg); }
+.slice-2-4 { top: 50%; left: 50%; transform: rotate(90deg); }
+.slice-3-4 { top: 50%; left: 0; transform: rotate(180deg); }
+.slice-4-4 { top: 0; left: 0; transform: rotate(270deg); }
+/* Plassering for 2 deler */
+.slice-1-2 { width: 50%; height: 100%; top: 0; left: 0; background-color: #e74c3c; opacity: 0.7; }
+.slice-2-2 { width: 50%; height: 100%; top: 0; left: 50%; background-color: transparent; }
+
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 0.8em;
+    color: #666;
+}
