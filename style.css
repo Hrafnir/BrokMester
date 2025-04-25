@@ -220,3 +220,65 @@ footer {
     font-size: 0.8em;
     color: #666;
 }
+
+/* ... (Eksisterende CSS beholdes) ... */
+
+/* Styling for prinsipp-formel */
+.formula-display {
+    font-size: 1.2em;
+    margin: 15px 0;
+    text-align: center;
+}
+.formula-display .operator {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Styling for multiplikasjonsoppgave-visning */
+.multiply-problem-display {
+    display: flex; /* Bruk flexbox for å justere elementene */
+    justify-content: center; /* Sentrer elementene horisontalt */
+    align-items: center; /* Sentrer elementene vertikalt */
+    margin: 20px 0;
+}
+
+.multiply-problem-display .fraction-display {
+    margin: 0 10px; /* Litt luft rundt brøkene */
+}
+
+.multiply-problem-display .operator.large {
+    font-size: 2.5em; /* Stor multiplikasjons-symbol */
+    color: #333;
+    margin: 0 15px; /* Mer luft rundt symbolet */
+}
+
+/* Styling for svarområdet i multiplikasjon */
+#multiply-answer-area label {
+    display: inline-block;
+    width: 90px; /* Litt mer plass for lengre label */
+    text-align: right;
+    margin-right: 5px;
+}
+
+/* Gjenbruk feedback-styling - legg til nye ID-er */
+#m-feedback {
+     font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 1.5em;
+}
+#m-feedback.success { color: #2a9d8f; background-color: #e9f5f3; border: 1px solid #a5d8d1; }
+#m-feedback.error { color: #e76f51; background-color: #fdecea; border: 1px solid #f9cdc1; }
+#m-feedback.info { color: #264653; background-color: #e4f0f3; border: 1px solid #b8d6de; }
+
+/* Sørg for at ID-spesifikke knapper styles likt */
+#m-check-answer-btn, #m-new-task-btn {
+     /* Arver generell knappestil, men kan spesifiseres her om nødvendig */
+}
+#m-new-task-btn {
+     background-color: #a3b18a;
+     color: #333;
+}
+#m-new-task-btn:hover {
+    background-color: #dad7cd;
+}
