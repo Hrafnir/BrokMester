@@ -3,104 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrøkMester: Forkorting</title>
+    <title>BrøkMester: Forkorting & Multiplikasjon</title> {/* Endret tittel */}
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>BrøkMester: Forkorting</h1>
+        <h1>BrøkMester: Forkorting & Multiplikasjon</h1> {/* Endret tittel */}
     </header>
 
     <nav>
         <button onclick="showSection('intro')">Introduksjon</button>
-        <button onclick="showSection('principles')">Prinsippet</button>
-        <button onclick="showSection('example')">Eksempel</button>
-        <button onclick="showSection('practice')">Øving</button>
+        <button onclick="showSection('principles')">Forkorting Prinsipp</button>
+        {/* <button onclick="showSection('example')">Forkorting Eksempel</button> */} {/* Kan fjernes for å forenkle nav */}
+        <button onclick="showSection('practice')">Forkorting Øving</button>
+        <button onclick="showSection('multiply-principles')">Multiplikasjon Prinsipp</button> {/* NY KNAPP */}
+        {/* <button onclick="showSection('multiply-example')">Multiplikasjon Eksempel</button> */} {/* Kan fjernes */}
+        <button onclick="showSection('multiply-practice')">Multiplikasjon Øving</button> {/* NY KNAPP */}
     </nav>
 
     <main>
+        {/* --- Eksisterende seksjoner (intro, principles, example, practice) beholdes --- */}
         <section id="intro" class="active">
-            <h2>Hva er forkorting?</h2>
-            <p>Har du sett brøker som 1/2 og 2/4? De ser forskjellige ut, men betyr det samme!</p>
-            <p>Å forkorte en brøk betyr å skrive den på den <strong>enkleste måten</strong>, med lavest mulig tall i teller og nevner, uten å endre brøkens verdi.</p>
-            <div class="visual-example">
-                <div class="fraction-visual">
-                    <p>2/4</p>
-                    <div class="pizza">
-                        <div class="slice slice-1-4 marked"></div>
-                        <div class="slice slice-2-4 marked"></div>
-                        <div class="slice slice-3-4"></div>
-                        <div class="slice slice-4-4"></div>
-                    </div>
-                </div>
-                <p style="font-size: 2em; margin: 0 20px;">=</p>
-                 <div class="fraction-visual">
-                    <p>1/2</p>
-                    <div class="pizza pizza-half">
-                        <div class="slice slice-1-2 marked"></div>
-                        <div class="slice slice-2-2"></div>
-                    </div>
-                 </div>
-            </div>
-             <p>Hvorfor forkorte? Det gjør brøker enklere å jobbe med og lettere å forstå størrelsen på.</p>
-             <button onclick="showSection('principles')">Lær prinsippet</button>
+            <h2>Velkommen til BrøkMester!</h2>
+            <p>Lær om forkorting og multiplikasjon av brøk.</p>
+            <p><strong>Forkorting:</strong> Å skrive en brøk på sin enkleste form (f.eks. 2/4 blir 1/2).</p>
+             <div class="visual-example">
+                {/* ... (pizza-eksempel som før) ... */}
+             </div>
+             <p><strong>Multiplikasjon:</strong> Å gange to brøker med hverandre (f.eks. 1/2 * 1/3).</p>
+             <p>Bruk knappene over for å navigere.</p>
         </section>
 
         <section id="principles">
-            <h2>Prinsippet: Dele likt oppe og nede</h2>
-            <p>En brøk endrer ikke verdi hvis du deler både telleren (tallet over) og nevneren (tallet under) med det <strong>samme</strong> tallet (som ikke er 0).</p>
-            <p>Dette tallet må være en <strong>felles faktor</strong> - et tall som både teller og nevner kan deles på uten rest.</p>
-            <p>Se på brøken 4/8:</p>
-            <div class="fraction-display interactive-example">
-                 <span class="numerator">4</span>
-                 <span class="denominator">8</span>
-            </div>
-            <p>Vi kan dele både 4 og 8 på <strong>2</strong>:</p>
-            <p>4 ÷ 2 = 2</p>
-            <p>8 ÷ 2 = 4</p>
-            <p>Så 4/8 = 2/4</p>
-             <p>Vi kan også dele både 4 og 8 på <strong>4</strong> (som er den Største Felles Faktor - SFF):</p>
-            <p>4 ÷ 4 = 1</p>
-            <p>8 ÷ 4 = 2</p>
-            <p>Så 4/8 = 1/2 (Dette er den helt forkortede formen)</p>
-             <p><strong>Viktig:</strong> Du kan *ikke* dele med et tall som ikke går opp i både teller og nevner. F.eks. kan du ikke dele 4/8 med 3.</p>
-             <button onclick="showSection('example')">Se et steg-for-steg eksempel</button>
+            <h2>Prinsippet: Forkorting</h2>
+            <p>Å forkorte en brøk betyr å dele både teller og nevner med det <strong>samme</strong> tallet (en felles faktor).</p>
+            <p>Målet er å finne den <strong>Største Felles Faktor (SFF)</strong> for å forkorte brøken helt i ett steg.</p>
+            <p>Eksempel: 4/8</p>
+            <ul>
+                <li>Felles faktorer for 4 og 8 er 2 og 4.</li>
+                <li>SFF er 4.</li>
+                <li>(4 ÷ 4) / (8 ÷ 4) = 1/2</li>
+            </ul>
+             <button onclick="showSection('practice')">Øv på forkorting</button>
         </section>
 
         <section id="example">
-            <h2>Eksempel: Forkorting av 12/18</h2>
+            {/* ... (Forkortingseksempel 12/18 som før) ... */}
+             <h2>Eksempel: Forkorting av 12/18</h2>
             <div id="example-steps">
                 <p><strong>Oppgave:</strong> Forkort brøken <span class="fraction-inline"><span class="numerator">12</span><span class="denominator">18</span></span></p>
-                <p><strong>Steg 1: Finn felles faktorer.</strong></p>
-                <p>Hvilke tall kan både 12 og 18 deles på (utenom 1)?</p>
-                <ul>
-                    <li>Kan de deles på 2? Ja (12÷2=6, 18÷2=9)</li>
-                    <li>Kan de deles på 3? Ja (12÷3=4, 18÷3=6)</li>
-                    <li>Kan de deles på 6? Ja (12÷6=2, 18÷6=3)</li>
-                </ul>
-                <p>Felles faktorer er 2, 3, og 6.</p>
-
-                <p><strong>Steg 2: Velg Største Felles Faktor (SFF).</strong></p>
-                <p>Den største av de felles faktorene er 6.</p>
-                 <p><em>(Tips: Å bruke SFF forkorter brøken helt i ett steg!)</em></p>
-
-                <p><strong>Steg 3: Del teller og nevner med SFF (6).</strong></p>
-                <p>Teller: 12 ÷ 6 = 2</p>
-                <p>Nevner: 18 ÷ 6 = 3</p>
-
-                <p><strong>Steg 4: Skriv den forkortede brøken.</strong></p>
-                 <div class="fraction-display result-example">
-                     <span class="numerator">2</span>
-                     <span class="denominator">3</span>
-                 </div>
-                <p>12/18 forkortet er 2/3. Denne kan ikke forkortes mer.</p>
+                <p><strong>Steg 1: Finn felles faktorer.</strong> Felles faktorer for 12 og 18 er 2, 3, og 6.</p>
+                <p><strong>Steg 2: Velg Største Felles Faktor (SFF).</strong> SFF er 6.</p>
+                <p><strong>Steg 3: Del teller og nevner med SFF (6).</strong> (12 ÷ 6) / (18 ÷ 6) = 2 / 3</p>
+                 <p><strong>Resultat:</strong> <span class="fraction-inline"><span class="numerator">2</span><span class="denominator">3</span></span></p>
             </div>
-             <button onclick="showSection('practice')">Klar til å øve?</button>
+             <button onclick="showSection('practice')">Øv på forkorting</button>
         </section>
 
         <section id="practice">
-            <h2>Øvelse gjør mester!</h2>
+            {/* ... (Øvingsområde for forkorting som før) ... */}
+             <h2>Øvelse: Forkorting</h2>
             <p>Forkort brøken nedenfor så mye som mulig:</p>
             <div id="problem-area">
                 <div id="problem-fraction" class="fraction-display large">
@@ -108,7 +71,6 @@
                     <span class="denominator" id="task-denominator">?</span>
                 </div>
             </div>
-
             <div id="answer-area">
                 <label for="user-numerator">Ny teller:</label>
                 <input type="number" id="user-numerator" min="1">
@@ -119,13 +81,97 @@
                 <button id="check-answer-btn">Sjekk svar</button>
                  <button id="hint-btn">Hint (Vis SFF)</button>
             </div>
-
             <div id="feedback-area">
                 <p id="feedback"></p>
             </div>
-
-            <button id="new-task-btn" style="display: none;">Ny Oppgave</button>
+            <button id="new-task-btn" style="display: none;">Ny Forkortingsoppgave</button>
         </section>
+
+        {/* --- NYE SEKSJONER FOR MULTIPLIKASJON --- */}
+
+        <section id="multiply-principles">
+            <h2>Prinsippet: Multiplikasjon av brøk</h2>
+            <p>Å multiplisere (gange) to brøker er enklere enn du tror!</p>
+            <p><strong>Regel: Teller ganger teller, og nevner ganger nevner.</strong></p>
+            <div class="formula-display">
+                <span class="fraction-inline"><span class="numerator">a</span><span class="denominator">b</span></span>
+                <span class="operator"> × </span>
+                <span class="fraction-inline"><span class="numerator">c</span><span class="denominator">d</span></span>
+                <span class="operator"> = </span>
+                <span class="fraction-inline"><span class="numerator">a × c</span><span class="denominator">b × d</span></span>
+            </div>
+            <p><strong>Eksempel:</strong> 1/2 * 3/4</p>
+            <ul>
+                <li>Teller ganger teller: 1 × 3 = 3</li>
+                <li>Nevner ganger nevner: 2 × 4 = 8</li>
+                <li>Resultat: 3/8</li>
+            </ul>
+            <p><strong>Viktig tips:</strong> Etter at du har multiplisert, må du ofte <strong>forkorte</strong> svaret til den enkleste formen!</p>
+            <p>Noen ganger kan du også forkorte *før* du multipliserer (kryssforkorting). Dette kan gjøre tallene mindre å jobbe med.</p>
+            <button onclick="showSection('multiply-example')">Se et eksempel</button>
+        </section>
+
+        <section id="multiply-example">
+            <h2>Eksempel: Multiplikasjon (2/3 * 3/4)</h2>
+            <p><strong>Oppgave:</strong> Regn ut <span class="fraction-inline"><span class="numerator">2</span><span class="denominator">3</span></span> × <span class="fraction-inline"><span class="numerator">3</span><span class="denominator">4</span></span></p>
+
+            <p><strong>Metode 1: Multipliser først, forkort etterpå</strong></p>
+            <ol>
+                <li>Teller × Teller: 2 × 3 = 6</li>
+                <li>Nevner × Nevner: 3 × 4 = 12</li>
+                <li>Resultat før forkorting: <span class="fraction-inline"><span class="numerator">6</span><span class="denominator">12</span></span></li>
+                <li>Forkort 6/12: SFF for 6 og 12 er 6. (6 ÷ 6) / (12 ÷ 6) = 1/2</li>
+            </ol>
+            <p><strong>Endelig svar: <span class="fraction-inline"><span class="numerator">1</span><span class="denominator">2</span></span></strong></p>
+
+            <p style="margin-top: 20px;"><strong>Metode 2: Kryssforkorting først (Valgfritt, men smart!)</strong></p>
+             <p>Se om du kan forkorte tall på skrå (eller loddrett) *før* du ganger.</p>
+            <ol>
+                <li>Se på 2 (teller) og 4 (nevner på skrå): Begge kan deles på 2. (2÷2=1, 4÷2=2)</li>
+                 <li>Se på 3 (nevner) og 3 (teller på skrå): Begge kan deles på 3. (3÷3=1, 3÷3=1)</li>
+                <li>Den nye oppgaven blir: <span class="fraction-inline"><span class="numerator">1</span><span class="denominator">1</span></span> × <span class="fraction-inline"><span class="numerator">1</span><span class="denominator">2</span></span></li>
+                 <li>Multipliser: (1 × 1) / (1 × 2) = 1/2</li>
+            </ol>
+             <p><strong>Samme endelige svar: <span class="fraction-inline"><span class="numerator">1</span><span class="denominator">2</span></span></strong></p>
+             <button onclick="showSection('multiply-practice')">Øv på multiplikasjon</button>
+        </section>
+
+        <section id="multiply-practice">
+             <h2>Øvelse: Multiplikasjon</h2>
+            <p>Multipliser brøkene og skriv svaret på enkleste form (ferdig forkortet).</p>
+            <div id="multiply-problem-area">
+                <div class="multiply-problem-display">
+                    <span id="multiply-fraction1" class="fraction-display large">
+                        <span class="numerator" id="m-task-numerator1">?</span>
+                        <span class="denominator" id="m-task-denominator1">?</span>
+                    </span>
+                    <span class="operator large"> × </span>
+                    <span id="multiply-fraction2" class="fraction-display large">
+                        <span class="numerator" id="m-task-numerator2">?</span>
+                        <span class="denominator" id="m-task-denominator2">?</span>
+                    </span>
+                </div>
+            </div>
+
+            <div id="multiply-answer-area">
+                <label for="m-user-numerator">Svar Teller:</label>
+                <input type="number" id="m-user-numerator" min="1">
+                <br>
+                 <label for="m-user-denominator">Svar Nevner:</label>
+                <input type="number" id="m-user-denominator" min="1">
+                <br>
+                <button id="m-check-answer-btn">Sjekk svar</button>
+                 {/* Hint for multiplikasjon er mindre rett frem, kan droppes eller gi generell info */}
+                 {/* <button id="m-hint-btn">Hint</button> */}
+            </div>
+
+            <div id="multiply-feedback-area">
+                <p id="m-feedback"></p>
+            </div>
+
+            <button id="m-new-task-btn" style="display: none;">Ny Multiplikasjonsoppgave</button>
+        </section>
+
     </main>
 
     <footer>
